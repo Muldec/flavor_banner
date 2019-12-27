@@ -1,0 +1,58 @@
+include: package:pedantic/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - test/**
+  errors:
+    empty_catches: error
+    recursive_getters: error
+    valid_regexps: error
+    prefer_interpolation_to_compose_strings: warning
+    prefer_final_fields: warning
+    curly_braces_in_flow_control_structures: warning
+    no_duplicate_case_values: warning
+
+linter:
+  rules:
+    - avoid_renaming_method_parameters
+    - avoid_returning_null
+    - avoid_returning_this
+    - avoid_single_cascade_in_expression_statements
+    - avoid_slow_async_io
+    - avoid_unused_constructor_parameters
+    - avoid_void_async
+    - await_only_futures
+    - camel_case_types
+    - close_sinks
+    - constant_identifier_names
+    - directives_ordering
+    - file_names
+    - hash_and_equals
+    - implementation_imports
+    - non_constant_identifier_names
+    - omit_local_variable_types
+    - package_api_docs
+    - package_names
+    - package_prefixed_library_names
+    - parameter_assignments
+    - prefer_const_constructors
+    - prefer_const_constructors_in_immutables
+    - prefer_const_declarations
+    - prefer_const_literals_to_create_immutables
+    - prefer_constructors_over_static_methods
+    - prefer_initializing_formals
+    - prefer_interpolation_to_compose_strings
+    - prefer_typing_uninitialized_variables
+    - prefer_void_to_null
+    - test_types_in_equals
+    - type_annotate_public_apis
+    - unnecessary_getters_setters
+    - unnecessary_lambdas
+    - unnecessary_null_aware_assignments
+    - unnecessary_overrides
+    - unnecessary_parenthesis
+    - unnecessary_statements
+    - use_setters_to_change_properties
+    - use_string_buffers
+    - use_to_and_as_if_applicable
+    - void_checks

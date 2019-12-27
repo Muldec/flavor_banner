@@ -29,7 +29,7 @@ class DeviceInfoDialog extends StatelessWidget {
   /// Creates the Device Info Dialog by providing a [PlatformWrapper] and
   /// a [BuildInfo]
   @visibleForTesting
-  DeviceInfoDialog.internal({
+  const DeviceInfoDialog.internal({
     this.flavorName,
     this.color,
     @required this.platform,
