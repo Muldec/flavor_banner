@@ -1,6 +1,6 @@
 name: flavor_banner
 description: A Flutter package that Provides a widget to display a tappable banner in the top left part of your app to show a dialog with the device information.
-version: 0.1.0
+version: 0.1.1
 author: Sebastien Decoux
 homepage: https://github.com/muldec/flavor_banner
 
