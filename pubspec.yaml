@@ -18,6 +18,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  pedantic: '>=1.8.0 <3.0.0' # https://pub.dartlang.org/packages/pedantic
   mockito: ^4.1.1 # https://pub.dartlang.org/packages/mockito
 
 # For information on the generic Dart part of this file, see the

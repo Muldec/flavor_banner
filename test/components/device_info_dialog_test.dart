@@ -22,10 +22,10 @@ void main() {
 
       expect(find.byWidgetPredicate((widget) {
         if (widget is AlertDialog) {
-          final AlertDialog alertDialog = widget;
+          final alertDialog = widget;
           final Container title = alertDialog.title;
           final BoxDecoration decoration = title.decoration;
-          return (decoration.color == Colors.amberAccent);
+          return decoration.color == Colors.amberAccent;
         }
         return false;
       }), findsOneWidget);
@@ -44,10 +44,10 @@ void main() {
 
       expect(find.byWidgetPredicate((widget) {
         if (widget is AlertDialog) {
-          final AlertDialog alertDialog = widget;
+          final alertDialog = widget;
           final Container title = alertDialog.title;
           final BoxDecoration decoration = title.decoration;
-          return (decoration.color == Colors.red);
+          return decoration.color == Colors.red;
         }
         return false;
       }), findsOneWidget);
@@ -129,7 +129,7 @@ void main() {
   });
 
   group('check device type', () {
-    final unknownDevice = 'You\'re neither on Android nor iOS';
+    const unknownDevice = 'You\'re neither on Android nor iOS';
 
     testWidgets('Should display a message when the OS is unknown', (WidgetTester tester) async {
       await tester.pumpWidget(
@@ -218,14 +218,14 @@ void main() {
             color: Colors.amberAccent,
             platform: FakeIOSPlatform(),
             deviceInfo: FakeIosDeviceInfoPlugin(),
-            buildInfo: FakeBuildInfo(buildMode: BuildMode.DEBUG),
+            buildInfo: FakeBuildInfo(buildMode: BuildMode.debug),
           ),
         ),
       );
 
       await tester.pump();
 
-      expect(find.text('DEBUG'), findsOneWidget);
+      expect(find.text('debug'), findsOneWidget);
     });
 
     testWidgets('Should find PROFILE when ios and PROFILE mode', (WidgetTester tester) async {
@@ -236,14 +236,14 @@ void main() {
             color: Colors.amberAccent,
             platform: FakeIOSPlatform(),
             deviceInfo: FakeIosDeviceInfoPlugin(),
-            buildInfo: FakeBuildInfo(buildMode: BuildMode.PROFILE),
+            buildInfo: FakeBuildInfo(buildMode: BuildMode.profile),
           ),
         ),
       );
 
       await tester.pump();
 
-      expect(find.text('PROFILE'), findsOneWidget);
+      expect(find.text('profile'), findsOneWidget);
     });
 
     testWidgets('Should find RELEASE when ios and RELEASE mode', (WidgetTester tester) async {
@@ -254,14 +254,14 @@ void main() {
             color: Colors.amberAccent,
             platform: FakeIOSPlatform(),
             deviceInfo: FakeIosDeviceInfoPlugin(),
-            buildInfo: FakeBuildInfo(buildMode: BuildMode.RELEASE),
+            buildInfo: FakeBuildInfo(buildMode: BuildMode.release),
           ),
         ),
       );
 
       await tester.pump();
 
-      expect(find.text('RELEASE'), findsOneWidget);
+      expect(find.text('release'), findsOneWidget);
     });
 
     testWidgets('Should find DEBUG when android and DEBUG mode', (WidgetTester tester) async {
@@ -272,14 +272,14 @@ void main() {
             color: Colors.amberAccent,
             platform: FakeAndroidPlatform(),
             deviceInfo: FakeAndroidDeviceInfoPlugin(),
-            buildInfo: FakeBuildInfo(buildMode: BuildMode.DEBUG),
+            buildInfo: FakeBuildInfo(buildMode: BuildMode.debug),
           ),
         ),
       );
 
       await tester.pump();
 
-      expect(find.text('DEBUG'), findsOneWidget);
+      expect(find.text('debug'), findsOneWidget);
     });
 
     testWidgets('Should find PROFILE when android and PROFILE mode', (WidgetTester tester) async {
@@ -290,14 +290,14 @@ void main() {
             color: Colors.amberAccent,
             platform: FakeAndroidPlatform(),
             deviceInfo: FakeAndroidDeviceInfoPlugin(),
-            buildInfo: FakeBuildInfo(buildMode: BuildMode.PROFILE),
+            buildInfo: FakeBuildInfo(buildMode: BuildMode.profile),
           ),
         ),
       );
 
       await tester.pump();
 
-      expect(find.text('PROFILE'), findsOneWidget);
+      expect(find.text('profile'), findsOneWidget);
     });
 
     testWidgets('Should find RELEASE when android and RELEASE mode', (WidgetTester tester) async {
@@ -308,14 +308,14 @@ void main() {
             color: Colors.amberAccent,
             platform: FakeAndroidPlatform(),
             deviceInfo: FakeAndroidDeviceInfoPlugin(),
-            buildInfo: FakeBuildInfo(buildMode: BuildMode.RELEASE),
+            buildInfo: FakeBuildInfo(buildMode: BuildMode.release),
           ),
         ),
       );
 
       await tester.pump();
 
-      expect(find.text('RELEASE'), findsOneWidget);
+      expect(find.text('release'), findsOneWidget);
     });
   });
 
@@ -718,7 +718,7 @@ void main() {
 
 class FakeBuildInfo extends Fake implements BuildInfo {
   final BuildMode buildMode;
-  FakeBuildInfo({this.buildMode = BuildMode.DEBUG});
+  FakeBuildInfo({this.buildMode = BuildMode.debug});
 
   @override
   BuildMode currentBuildMode() => buildMode;
@@ -779,7 +779,7 @@ class FakeAndroidDeviceInfoPlugin extends Fake implements DeviceInfoPlugin {
     this.manufacturer = 'manufacturer',
     version,
   }) : this.version = version ?? FakeAndroidBuildVersion(
-    release: 'release',
+    release: 'fab_release',
     sdkInt: 0,
   );
 
