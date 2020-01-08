@@ -1,3 +1,5 @@
+![](https://github.com/muldec/flavor_banner/workflows/CI/badge.svg)
+
 # flavor_banner
 
 Provides a widget to display a tappable banner in the top left part of 
