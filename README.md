@@ -5,6 +5,10 @@
 Provides a widget to display a tappable banner in the top left part of 
 your app to show a dialog with the device information.
 
+## Source
+
+This code comes from Julien Bitencourt's [article on Medium](https://medium.com/flutter-community/flutter-ready-to-go-e59873f9d7de) about flavors and his [repo](https://github.com/JHBitencourt/ready_to_go). The goal is to provide a widget that can be imported in any application rather than a boilerplate.
+
 ## Getting Started
 
 After importing this plugin to your project as usual, simply wrap your 
