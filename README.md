@@ -1,4 +1,4 @@
-![](https://github.com/muldec/flavor_banner/workflows/CI/badge.svg)
+![](https://github.com/muldec/flavor_banner/workflows/CI/badge.svg) [![codecov](https://codecov.io/gh/Muldec/flavor_banner/branch/master/graph/badge.svg)](https://codecov.io/gh/Muldec/flavor_banner)
 
 # flavor_banner
 
