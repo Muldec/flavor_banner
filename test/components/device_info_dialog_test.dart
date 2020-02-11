@@ -9,6 +9,17 @@ import 'package:flavor_banner/services/platform_wrapper.dart';
 
 void main() {
   group('check color', () {
+    testWidgets('Should fail assertion when color is null', (WidgetTester tester) async {
+      // Given
+      final widget = () => DeviceInfoDialog(
+        flavorName: 'FOO',
+        color: null,
+      );
+
+      // Then
+      expect(widget, throwsAssertionError);
+    });
+
     testWidgets('Should find amberAccent in title when color is amberAccent', (
       WidgetTester tester) async {
       await tester.pumpWidget(
@@ -55,6 +66,19 @@ void main() {
   });
 
   group('check flavor', () {
+    testWidgets('Should fail assertion when color is null', (WidgetTester tester) async {
+      // Given
+      final widget = () => DeviceInfoDialog.internal(
+        color: null,
+        platform: FakeAndroidPlatform(),
+        deviceInfo: FakeAndroidDeviceInfoPlugin(),
+        buildInfo: FakeBuildInfo(),
+      );
+
+      // Then
+      expect(widget, throwsAssertionError);
+    });
+
     testWidgets('Should find FOO when android and flavor is FOO', (WidgetTester tester) async {
       await tester.pumpWidget(
         MaterialApp(

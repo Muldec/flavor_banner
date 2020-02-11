@@ -5,6 +5,31 @@ import 'package:flavor_banner/components/flavor_config.dart';
 import 'package:flavor_banner/components/flavor_banner.dart';
 
 void main() {
+  testWidgets(
+    'Should fail assertion when child is null', (WidgetTester tester) async {
+    // Given
+    final widget = () => FlavorBanner(
+      child: null,
+      flavorConfig: FlavorConfig(
+        flavor: Flavor.PRODUCTION,
+      ),
+    );
+
+    // Then
+    expect(widget, throwsAssertionError);
+  });
+
+  testWidgets('Should fail assertion when flavorConfig is null', (WidgetTester tester) async {
+    // Given
+    final widget = () => FlavorBanner(
+      child: const Text('Child'),
+      flavorConfig: null,
+    );
+
+    // Then
+    expect(widget, throwsAssertionError);
+  });
+
   testWidgets('Should not display any banner if PRODUCTION', (WidgetTester tester) async {
     // Given
     await tester.pumpWidget(
